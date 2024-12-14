@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #004182;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+header {
+  background-color: #004182;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 5px;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: #4182fc;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+.nav-link:hover {
+  background-color: #004182;
+}
+
+
+.section-title {
+  color: #333;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.input-text, .input-email, .textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  background-color: #4182fc;
+  color: white;
+  width: fit-content;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #004182;
+}
+
+.button-calc{
+  background: #4182fc;
+  margin: 15px 0;
+  padding: 15px;
+  color: white;
+}
+
+.button-calc:hover {
+  background: #004182;
+}
+
+
+.table-calc{
+  border: #333333;
+  border-radius: 1px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Магазин Телефонів</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Ласкаво просимо до магазину телефонів</h1>
+  <nav>
+    <ul class="nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Головна</a></li>
+      <li class="nav-item"><a class="nav-link" href="products.html">Продукти</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Контакти</a></li>
+      <li class="nav-item"><a class="nav-link" href="task.html">Приклади</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2 class="section-title">Новинки</h2>
+    <p>Перегляньте наші нові моделі телефонів за привабливими цінами!</p>
+    <div>
+      <button class="button-calc" id="calculateButton">Обчислити</button>
+      <script>
+        document.getElementById("calculateButton").addEventListener("click", function() {
+          const a = parseFloat(prompt("Введіть a (за замовчуванням 0.7):", "0.7")) || 0.7;
+          const b = parseFloat(prompt("Введіть b (за замовчуванням 0.05):", "0.05")) || 0.05;
+          const x = parseFloat(prompt("Введіть x (за замовчуванням 0.5):", "0.5")) || 0.5;
+
+          const R = (Math.pow(x, 2) * (x + 1)) / b - Math.pow(Math.sin(x + a), 2);
+          const S = Math.abs((x * b) / a) + Math.pow(Math.cos(x + b), 6);
+
+          alert(`Результати обчислень:\nR = ${R.toFixed(4)}\nS = ${S.toFixed(4)}`);
+        });
+      </script>
+
+      <button class="button-calc" id="arrayButton">Сформувати таблицю</button>
+      <div id="tableContainer"></div>
+      <script>
+        document.getElementById("arrayButton").addEventListener("click", function() {
+          const n = parseInt(prompt("Введіть кількість елементів у списку (максимум 50):", "10"));
+
+          if (isNaN(n) || n <= 0 || n > 50) {
+            alert("Некоректне значення. Спробуйте ще раз.");
+            return;
+          }
+
+          const p = new Array(n);
+          const a = new Array(n);
+          p[0] = n - 1;
+
+          for (let i = 0; i < n; i++) {
+            if (i > 0) {
+              p[i] = (p[i - 1] * 67 + 11) % 128;
+            }
+            a[i] = p[i] - 64;
+          }
+
+          let maxElement = a[0];
+          let maxIndex = 0;
+          for (let i = 1; i < n; i++) {
+            if (a[i] > maxElement) {
+              maxElement = a[i];
+              maxIndex = i;
+            }
+          }
+
+          let tableHTML = "<table border='1'><tr><th>Індекс</th><th>p[i]</th><th>a[i]</th></tr>";
+          for (let i = 0; i < n; i++) {
+            tableHTML += `<tr><td>${i}</td><td>${p[i]}</td><td>${a[i]}</td></tr>`;
+          }
+          tableHTML += "</table>";
+
+          const tableContainer = document.getElementById("tableContainer");
+          tableContainer.innerHTML = `<h2>Результати обчислень</h2>${tableHTML}<p>Найбільший елемент масиву a: ${maxElement}, його порядковий номер: ${maxIndex}</p>`;
+        });
+      </script>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2024 Магазин Телефонів. Всі права захищені.</p>
+</footer>
+</body>
+</html>
